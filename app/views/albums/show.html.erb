@@ -1,0 +1,34 @@
+<%= link_to "back to band", band_url(@album.band_id) %>
+
+<br><br>
+
+Band_id
+<%= @album.band_id %>
+
+<br>
+
+title
+<%= @album.title %>
+
+<br>
+
+year
+<%= @album.year %>
+
+<br>
+
+live
+<%= @album.live %>
+
+<br><br>
+
+<form class="album_forms" action="<%= edit_album_url %>" method="get">
+    <input type="submit" value="Edit Album">
+</form>
+
+<form class="album_forms" action="<%= album_url %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <input type="submit" value="Delete Album">
+</form>

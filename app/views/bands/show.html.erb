@@ -1,0 +1,21 @@
+<h1><%= @band.name %></h1>
+
+<br>
+
+<p><%= @band.name %> is one of the greatest bands of all time!</p>
+
+<br>
+
+<%= link_to "Edit your band", edit_band_url(@band) %>
+
+<br>
+
+<label>
+All albums:
+    <ul>
+    <% @band.albums.each do |album| %>
+        <li>Title: <%= album.title %>, Year: <%= album.year %>, Live: <%= album.live %></li>    
+    <% end %>
+    </ul>
+</label>
+
